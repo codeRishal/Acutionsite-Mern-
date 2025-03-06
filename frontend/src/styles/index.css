@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@use "sass:color";
+@use "sass:math";
+@use "bootstrap/scss/bootstrap";
+@use "./custom";
+
+:root {
+  --primary: #204C41;
+  --green: #5BBB7B;
+  --green-100: #EEF8F2;
+  --gray-100: #6C7278;
+  --text: #222222;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.menu-container {
+  background-color: #24262b;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+.menu-container.open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-container.closed {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 4;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.5s ease;
+  z-index: 100;
+}
+
+.active-link {
+  color: var(--green) !important;
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.vert-move {
+  animation: mover 1s infinite alternate ease-in-out;
+}
+
+.horiz-move {
+  animation: mover-horizontal 1s infinite alternate ease-in-out;
+}

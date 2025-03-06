@@ -1,0 +1,69 @@
+@use "sass:color";
+@use "sass:math";
+@use "bootstrap/scss/bootstrap" with (
+  $enable-shadows: true,
+  $enable-gradients: true,
+  $enable-negative-margins: true,
+  $enable-smooth-scroll: true,
+  $enable-deprecation-messages: false,
+  $enable-rfs: true
+);
+
+// Modern vibrant color palette
+$theme-colors: (
+  "primary": #6366f1,    // Indigo
+  "secondary": #8b5cf6,  // Purple
+  "success": #10b981,    // Emerald
+  "info": #0ea5e9,       // Sky Blue
+  "warning": #f59e0b,    // Amber
+  "danger": #ef4444,     // Red
+  "light": #f8fafc,      // Slate 50
+  "dark": #1e293b,       // Slate 800
+  "accent": #f472b6,     // Pink
+  "neutral": #64748b     // Slate 500
+);
+
+// Enhanced shadows
+.shadow-soft {
+  box-shadow: 0 4px 20px -5px rgba(99, 102, 241, 0.1), 
+             0 15px 25px -5px rgba(99, 102, 241, 0.05);
+}
+
+.shadow-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.2);
+  }
+}
+// Modern dark theme color palette
+$theme-colors: (
+  "primary": #1a1a1a,    // Dark background
+  "secondary": #ffd700,  // Golden accent
+  "success": #daa520,    // Golden darker
+  "info": #2c2c2c,       // Light black
+  "warning": #ffc107,    // Amber
+  "danger": #dc3545,     // Red
+  "light": #f8f9fa,      // Light gray
+  "dark": #121212,       // Deep dark
+  "accent": #b8860b,     // Dark golden
+  "neutral": #343a40     // Gray
+);
+
+// Enhanced glass effect
+.glass {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.1);
+}
+
+// Gradient backgrounds
+.gradient-primary {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+}
